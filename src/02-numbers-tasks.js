@@ -217,7 +217,6 @@ function isPrime(n) {
     }
   }
   return true;
-
   // throw new Error('Not implemented');
 }
 

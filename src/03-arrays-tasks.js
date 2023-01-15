@@ -549,7 +549,8 @@ function distinct(arr) {
 function group(array, keySelector, valueSelector) {
   const map = array.reduce(
     (prev, curr) => prev.set(keySelector(curr), []),
-    new Map(),
+    // eslint-disable-next-line comma-dangle
+    new Map()
   );
   array.map((elem) => map.get(keySelector(elem)).push(valueSelector(elem)));
   return map;

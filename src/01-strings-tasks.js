@@ -54,7 +54,6 @@ function getStringLength(value) {
 function getStringFromTemplate(firstName, lastName) {
   const str = 'Hello';
   return `${str}, ${firstName} ${lastName}!`;
-
   // throw new Error('Not implemented');
 }
 
@@ -248,7 +247,6 @@ function encodeToRot13(str) {
   const input = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   const output = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
   return str.replace(/[a-z]/gi, (letter) => output[input.indexOf(letter)]);
-
   // throw new Error('Not implemented');
 }
 
