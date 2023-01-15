@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 /* *************************************************************************************************
  *                                                                                                *
  * Please read the following tutorial before implementing tasks:                                   *
@@ -125,10 +126,10 @@ function isTriangle(a, b, c) {
  */
 function doRectanglesOverlap(rect1, rect2) {
   if (
-    rect1.width < rect2.left
-    || rect1.left > rect2.width
-    || rect1.top > rect2.height
-    || rect1.height < rect2.top
+    rect1.width < rect2.left ||
+    rect1.left > rect2.width ||
+    rect1.top > rect2.height ||
+    rect1.height < rect2.top
   ) {
     return false;
   }
@@ -164,9 +165,9 @@ function doRectanglesOverlap(rect1, rect2) {
  */
 function isInsideCircle(circle, point) {
   return (
-    (Number(circle.center.x) - Number(point.x)) ** 2
-      + (Number(circle.center.y) - Number(point.y)) ** 2
-    < Number(circle.radius) ** 2
+    (Number(circle.center.x) - Number(point.x)) ** 2 +
+      (Number(circle.center.y) - Number(point.y)) ** 2 <
+    Number(circle.radius) ** 2
   );
   // throw new Error('Not implemented');
 }
@@ -338,8 +339,21 @@ function getDigitalRoot(num) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
-function isBracketsBalanced(/* str */) {
-  throw new Error('Not implemented');
+function isBracketsBalanced(str) {
+  let strLength = 0;
+  let modifiedLength;
+  let modifiedStr = str;
+  while (strLength !== modifiedLength) {
+    strLength = modifiedStr.length;
+    modifiedStr = modifiedStr
+      .replace('[]', '')
+      .replace('()', '')
+      .replace('<>', '')
+      .replace('{}', '');
+    modifiedLength = modifiedStr.length;
+  }
+  return !modifiedStr.length;
+  // throw new Error('Not implemented');
 }
 
 /**
