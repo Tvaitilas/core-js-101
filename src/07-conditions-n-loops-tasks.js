@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable operator-linebreak */
 /* *************************************************************************************************
  *                                                                                                *
@@ -285,13 +286,20 @@ function reverseInteger(num) {
  *   5436468789016589 => false
  *   4916123456789012 => false
  */
+
 function isCreditCardNumber(ccn) {
-  const cardno = /^(?:5[1-5][0-9]{14})$/;
-  if (ccn.value.match(cardno)) {
-    return true;
-  }
-  return false;
-  // throw new Error('Not implemented');
+  return (
+    String(ccn)
+      .split('')
+      .reverse()
+      // eslint-disable-next-line eqeqeq
+      .map((v, i) => (i % 2 == 0 ? v : v * 2))
+      .map((v) => (String(v).length < 2 ? v : v - 9))
+      // eslint-disable-next-line radix
+      .reduce((p, c) => parseInt(p) + parseInt(c)) %
+      10 ===
+    0
+  );
 }
 
 /**
